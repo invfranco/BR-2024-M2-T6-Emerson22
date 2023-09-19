@@ -69,6 +69,7 @@ class Dinosaur(Sprite):
         if self.dino_jump:
             self.dino_rect.y -= self.jump_vel * 4
             self.jump_vel -= 0.8
+
         if self.jump_vel < -JUMP_VEL:
             self.dino_rect.y = Y_POS
             self.dino_jump = False
@@ -81,5 +82,6 @@ class Dinosaur(Sprite):
         self.dino_rect.y = Y_POS_DUCK
         self.step_index += 1
         self.dino_duck = False
+
     def draw(self, screen):
         screen.blit(self.image, (self.dino_rect.x, self.dino_rect.y))
